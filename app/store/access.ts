@@ -27,6 +27,7 @@ export const useAccessStore = create<AccessControlStore>()(
         const storedUser = sessionStorage.getItem("user");
         const user = storedUser ? JSON.parse(storedUser) : null;
         const isUserLoggedIn = Boolean(user);
+        console.log("1 isUserLoggedIn:", isUserLoggedIn); //1
         return isUserLoggedIn;
       },
       isAuthorized() {
@@ -35,6 +36,7 @@ export const useAccessStore = create<AccessControlStore>()(
         const storedUser = sessionStorage.getItem("user");
         const user = storedUser ? JSON.parse(storedUser) : null;
         const isUserLoggedIn = Boolean(user);
+        console.log("2 isUserLoggedIn:", isUserLoggedIn); //2
         return isUserLoggedIn;
       },
       fetch() {
