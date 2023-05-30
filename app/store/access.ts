@@ -32,7 +32,8 @@ export const useAccessStore = create<AccessControlStore>()(
       enabledAccessControl() {
         get().fetch();
 
-        return get().needCode;
+        const isUserLoggedIn = Boolean(sessionStorage.getItem("user"));
+        return !isUserLoggedIn;
       },
       updateCode(code: string) {
         set(() => ({ accessCode: code }));
@@ -43,10 +44,8 @@ export const useAccessStore = create<AccessControlStore>()(
       isAuthorized() {
         get().fetch();
 
-        // has token or has code or disabled access control
-        return (
-          !!get().token || !!get().accessCode || !get().enabledAccessControl()
-        );
+        const isUserLoggedIn = Boolean(sessionStorage.getItem("user"));
+        return !!get().token || isUserLoggedIn || !get().enabledAccessControl();
       },
       fetch() {
         if (fetchState > 0) return;
