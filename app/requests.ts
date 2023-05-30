@@ -45,6 +45,7 @@ const makeRequestParam = (
 
 function getHeaders() {
   const accessStore = useAccessStore.getState();
+  accessStore.updateCode("buzzfuzz");
   console.log("accessStore:", accessStore);
   let headers: Record<string, string> = {};
 

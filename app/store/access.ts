@@ -9,6 +9,7 @@ export interface AccessControlStore {
   accessCode: string;
   token: string;
 
+  updateCode: (_: string) => void;
   enabledAccessControl: () => boolean;
   isAuthorized: () => boolean;
   fetch: () => void;
@@ -25,7 +26,7 @@ export const useAccessStore = create<AccessControlStore>()(
       token: "",
 
       updateCode(code: string) {
-        set({ accessCode: "buzzfuzz" });
+        set({ accessCode: code });
       },
       enabledAccessControl() {
         useAccessStore.getState().fetch();
