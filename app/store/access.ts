@@ -23,20 +23,20 @@ export const useAccessStore = create<AccessControlStore>()(
       accessCode: "buzzfuzz",
 
       enabledAccessControl() {
-        get().fetch();
+        useAccessStore.getState().fetch();
         const storedUser = sessionStorage.getItem("user");
         const user = storedUser ? JSON.parse(storedUser) : null;
         const isUserLoggedIn = Boolean(user);
-        console.log("1 isUserLoggedIn:", isUserLoggedIn); //1
+        console.log("isUserLoggedIn:", isUserLoggedIn); //1
         return isUserLoggedIn;
       },
       isAuthorized() {
-        get().fetch();
+        useAccessStore.getState().fetch();
 
         const storedUser = sessionStorage.getItem("user");
         const user = storedUser ? JSON.parse(storedUser) : null;
         const isUserLoggedIn = Boolean(user);
-        console.log("2 isUserLoggedIn:", isUserLoggedIn); //2
+        console.log("isUserLoggedIn:", isUserLoggedIn);
         return isUserLoggedIn;
       },
       fetch() {
