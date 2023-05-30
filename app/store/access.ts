@@ -8,7 +8,6 @@ export interface AccessControlStore {
   openaiUrl: string;
   accessCode: string;
 
-  updateCode: (_: string) => void;
   enabledAccessControl: () => boolean;
   isAuthorized: () => boolean;
   fetch: () => void;
@@ -26,9 +25,6 @@ export const useAccessStore = create<AccessControlStore>()(
       enabledAccessControl() {
         const isUserLoggedIn = Boolean(sessionStorage.getItem("user"));
         return !isUserLoggedIn;
-      },
-      updateCode(code: string) {
-        set(() => ({ accessCode: code }));
       },
       isAuthorized() {
         get().fetch();
