@@ -25,9 +25,8 @@ export const useAccessStore = create<AccessControlStore>()(
       needCode: false,
 
       enabledAccessControl() {
-        get().fetch();
-
-        return get().needCode;
+        const isUserLoggedIn = Boolean(sessionStorage.getItem("user"));
+        return !isUserLoggedIn;
       },
       updateCode(code: string) {
         set(() => ({ accessCode: code }));
