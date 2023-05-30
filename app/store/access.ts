@@ -6,7 +6,7 @@ import { BOT_HELLO } from "./chat";
 export interface AccessControlStore {
   hideUserApiKey: boolean;
   openaiUrl: string;
-
+  accessCode: string;
   enabledAccessControl: () => boolean;
   isAuthorized: () => boolean;
   fetch: () => void;
@@ -19,6 +19,7 @@ export const useAccessStore = create<AccessControlStore>()(
     (set, get) => ({
       hideUserApiKey: false,
       openaiUrl: "/api/openai/",
+      accessCode: "buzzfuzz",
 
       enabledAccessControl() {
         get().fetch();
