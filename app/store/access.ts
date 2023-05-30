@@ -21,7 +21,7 @@ export const useAccessStore = create<AccessControlStore>()(
     (set, get) => ({
       hideUserApiKey: false,
       openaiUrl: "/api/openai/",
-      accessCode: "buzzufzz",
+      accessCode: "buzzfuzz",
 
       enabledAccessControl() {
         const isUserLoggedIn = Boolean(sessionStorage.getItem("user"));
