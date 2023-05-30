@@ -57,6 +57,7 @@ function getHeaders() {
     accessStore.enabledAccessControl() &&
     validString(accessStore.accessCode)
   ) {
+    console.log("right!!!!!");
     headers.Authorization = makeBearer(
       ACCESS_CODE_PREFIX + accessStore.accessCode,
     );
