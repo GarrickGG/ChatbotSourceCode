@@ -23,8 +23,9 @@ export const useAccessStore = create<AccessControlStore>()(
       accessCode: "buzzfuzz",
 
       enabledAccessControl() {
+        get().fetch();
         const isUserLoggedIn = Boolean(sessionStorage.getItem("user"));
-        return !isUserLoggedIn;
+        return isUserLoggedIn;
       },
       isAuthorized() {
         get().fetch();
