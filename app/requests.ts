@@ -45,7 +45,7 @@ const makeRequestParam = (
 
 function getHeaders() {
   const accessStore = useAccessStore.getState();
-  console.log("accessStore: " + accessStore);
+  console.log("accessStore:", accessStore);
   let headers: Record<string, string> = {};
 
   const makeBearer = (token: string) => `Bearer ${token.trim()}`;
@@ -63,7 +63,7 @@ function getHeaders() {
       ACCESS_CODE_PREFIX + accessStore.accessCode,
     );
   }
-  console.log("access code: " + accessStore.accessCode);
+  console.log("access code: ", accessStore.accessCode);
   return headers;
 }
 
