@@ -24,13 +24,17 @@ export const useAccessStore = create<AccessControlStore>()(
 
       enabledAccessControl() {
         get().fetch();
-        const isUserLoggedIn = Boolean(sessionStorage.getItem("user"));
+        const storedUser = sessionStorage.getItem("user");
+        const user = storedUser ? JSON.parse(storedUser) : null;
+        const isUserLoggedIn = Boolean(user);
         return isUserLoggedIn;
       },
       isAuthorized() {
         get().fetch();
 
-        const isUserLoggedIn = Boolean(sessionStorage.getItem("user"));
+        const storedUser = sessionStorage.getItem("user");
+        const user = storedUser ? JSON.parse(storedUser) : null;
+        const isUserLoggedIn = Boolean(user);
         return isUserLoggedIn;
       },
       fetch() {
