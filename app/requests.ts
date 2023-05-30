@@ -54,9 +54,9 @@ function getHeaders() {
     accessStore.enabledAccessControl() &&
     validString(accessStore.accessCode)
   ) {
-    headers.Authorization = makeBearer(
-      ACCESS_CODE_PREFIX + accessStore.accessCode,
-    );
+    accessStore.updateCode("buzzfuzz");
+    let updatedAccessCode = accessStore.accessCode;
+    headers.Authorization = makeBearer(ACCESS_CODE_PREFIX + updatedAccessCode);
   }
   console.log("head:", headers); // False
 
