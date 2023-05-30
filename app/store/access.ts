@@ -35,7 +35,7 @@ export const useAccessStore = create<AccessControlStore>()(
         get().fetch();
 
         const isUserLoggedIn = Boolean(sessionStorage.getItem("user"));
-        return !!get().accessCode || isUserLoggedIn;
+        return isUserLoggedIn;
       },
       fetch() {
         if (fetchState > 0) return;
