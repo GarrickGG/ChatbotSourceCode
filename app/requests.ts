@@ -62,7 +62,7 @@ function getHeaders() {
       ACCESS_CODE_PREFIX + accessStore.accessCode,
     );
   }
-
+  console.log("access code: " + accessStore.accessCode);
   return headers;
 }
 
