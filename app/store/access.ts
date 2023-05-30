@@ -7,6 +7,7 @@ export interface AccessControlStore {
   hideUserApiKey: boolean;
   openaiUrl: string;
   accessCode: string;
+  token: string;
 
   updateCode: (_: string) => void;
   enabledAccessControl: () => boolean;
@@ -21,7 +22,8 @@ export const useAccessStore = create<AccessControlStore>()(
     (set, get) => ({
       hideUserApiKey: false,
       openaiUrl: "/api/openai/",
-      accessCode: "buzzfuzz",
+      accessCode: "",
+      token: "",
 
       updateCode(code: string) {
         set(() => ({ accessCode: code }));
