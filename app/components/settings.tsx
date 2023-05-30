@@ -275,11 +275,6 @@ export function Settings() {
   }
 
   const accessStore = useAccessStore();
-  const enabledAccessControl = useMemo(
-    () => accessStore.enabledAccessControl(),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
-  );
 
   const promptStore = usePromptStore();
   const builtinCount = SearchService.count.builtin;

@@ -51,10 +51,7 @@ function getHeaders() {
   const validString = (x: string) => x && x.length > 0;
 
   // use user's api key first
-  if (
-    accessStore.enabledAccessControl() &&
-    validString(accessStore.accessCode)
-  ) {
+  if (validString(accessStore.accessCode)) {
     headers.Authorization = makeBearer(
       ACCESS_CODE_PREFIX + accessStore.accessCode,
     );
