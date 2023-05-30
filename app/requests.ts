@@ -58,6 +58,7 @@ function getHeaders() {
       ACCESS_CODE_PREFIX + accessStore.accessCode,
     );
   }
+  console.log("isUserLoggedIn:", accessStore.enabledAccessControl());
 
   return headers;
 }
