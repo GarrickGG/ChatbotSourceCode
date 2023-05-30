@@ -1,0 +1,24 @@
+// src/components/Modal.module.scss
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+  }
+  
+  
+  .modalContent {
+    background: rgba(99, 227, 227, 0.276);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+  }
+  
