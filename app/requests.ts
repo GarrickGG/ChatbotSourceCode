@@ -60,11 +60,11 @@ function getHeaders() {
     validString(accessStore.accessCode)
   ) {
     console.log("right!!!!!");
+    console.log("access code: ", accessStore.accessCode);
     headers.Authorization = makeBearer(
       ACCESS_CODE_PREFIX + accessStore.accessCode,
     );
   }
-  console.log("access code: ", accessStore.accessCode);
   return headers;
 }
 
