@@ -27,7 +27,9 @@ export const useAccessStore = create<AccessControlStore>()(
         const storedUser = sessionStorage.getItem("user");
         const user = storedUser ? JSON.parse(storedUser) : null;
         const isUserLoggedIn = Boolean(user);
-        console.log("isUserLoggedIn:", isUserLoggedIn); //1
+        console.log("Stored user:", storedUser); // 检查存储的用户信息是否正确
+        console.log("Parsed user:", user); // 检查解析后的用户信息是否正确
+        console.log("isUserLoggedIn:", isUserLoggedIn); // 检查最终的 isUserLoggedIn 值
         return isUserLoggedIn;
       },
       isAuthorized() {
@@ -36,7 +38,7 @@ export const useAccessStore = create<AccessControlStore>()(
         const storedUser = sessionStorage.getItem("user");
         const user = storedUser ? JSON.parse(storedUser) : null;
         const isUserLoggedIn = Boolean(user);
-        console.log("isUserLoggedIn:", isUserLoggedIn);
+
         return isUserLoggedIn;
       },
       fetch() {
