@@ -7,7 +7,7 @@ export interface AccessControlStore {
   hideUserApiKey: boolean;
   openaiUrl: string;
   accessCode: string;
-  needCode: boolean;
+
   updateCode: (_: string) => void;
   enabledAccessControl: () => boolean;
   isAuthorized: () => boolean;
@@ -22,7 +22,6 @@ export const useAccessStore = create<AccessControlStore>()(
       hideUserApiKey: false,
       openaiUrl: "/api/openai/",
       accessCode: "buzzufzz",
-      needCode: false,
 
       enabledAccessControl() {
         const isUserLoggedIn = Boolean(sessionStorage.getItem("user"));

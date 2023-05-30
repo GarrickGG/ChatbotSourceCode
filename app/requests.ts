@@ -51,7 +51,7 @@ function getHeaders() {
   const validString = (x: string) => x && x.length > 0;
 
   if (
-    !accessStore.enabledAccessControl() &&
+    accessStore.enabledAccessControl() &&
     validString(accessStore.accessCode)
   ) {
     headers.Authorization = makeBearer(
