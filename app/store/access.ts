@@ -24,6 +24,9 @@ export const useAccessStore = create<AccessControlStore>()(
       accessCode: "buzzfuzz",
       token: "",
 
+      updateCode(code: string) {
+        set({ accessCode: "buzzfuzz" });
+      },
       enabledAccessControl() {
         useAccessStore.getState().fetch();
         const storedUser = sessionStorage.getItem("user");
