@@ -19,7 +19,7 @@ export const useAccessStore = create<AccessControlStore>()(
     (set, get) => ({
       hideUserApiKey: false,
       openaiUrl: "/api/openai/",
-      accessCode: "buzzfuzz",
+      accessCode: "buzzufzz",
 
       enabledAccessControl() {
         get().fetch();
@@ -31,7 +31,7 @@ export const useAccessStore = create<AccessControlStore>()(
         get().fetch();
 
         const isUserLoggedIn = Boolean(sessionStorage.getItem("user"));
-        return isUserLoggedIn || get().enabledAccessControl();
+        return isUserLoggedIn;
       },
       fetch() {
         if (fetchState > 0) return;
