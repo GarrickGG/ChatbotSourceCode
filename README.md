@@ -29,6 +29,8 @@ Multi-language support: English, Simplified Chinese, Traditional Chinese, Japane
 
 
 Sensitive word filtering, spam removal, user registration, and login functionality—access granted upon login.
+
+
 =======================================================================================================================================
 
 The ChatGPT-Next-Web project is a robust web application built on a stack of advanced technologies. It utilizes React, a JavaScript library renowned for its efficiency in building user interfaces, and Next.js, a server-side rendering and static site generation framework based on React. The project is written in TypeScript, a statically typed superset of JavaScript, enhancing code readability and maintainability.
@@ -36,9 +38,10 @@ The ChatGPT-Next-Web project is a robust web application built on a stack of adv
 The design aspect of the application is handled by Tailwind CSS, a highly customizable, low-level CSS framework that provides utility classes for rapid UI development. Deployment of the application is managed through Vercel, a cloud platform for static sites and Serverless Functions. Version control and source code management are facilitated by GitHub.
 
 Recently, the project has been enhanced with several new features:
+=================================================================
 
-User Registration and Login: Users can now register and log into the application to access services. This feature provides a personalized experience and allows for better user management.
+1. User Registration and Login: Users can now register and log into the application to access services. This feature provides a personalized experience and allows for better user management.
 
-Sensitive Word Filtering: The application now includes a sensitive word filter to ensure the content shared within the platform adheres to community guidelines and maintains a respectful environment.
+2. Sensitive Word Filtering: The application now includes a sensitive word filter to ensure the content shared within the platform adheres to community guidelines and maintains a respectful environment.
 
-User Payment Functionality: Although not currently required, the application has been designed to support user payment functionality. This feature can be activated in the future to monetize certain services.
+3. User Payment Functionality: Although not currently required, the application has been designed to support user payment functionality. This feature can be activated in the future to monetize certain services.
